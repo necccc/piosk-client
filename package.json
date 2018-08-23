@@ -1,0 +1,39 @@
+{
+  "name": "piosk-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "npx nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "piosk-client": "bin/piosk-client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/necccc/piosk-client.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/necccc/piosk-client/issues"
+  },
+  "homepage": "https://github.com/necccc/piosk-client#readme",
+  "dependencies": {
+    "ejs": "2.6.1",
+    "express": "4.16.3",
+    "minimist": "1.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.3"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "public/*"
+    ],
+    "delay": "1500"
+  }
+}

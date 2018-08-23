@@ -1,0 +1,45 @@
+#! /usr/bin/env node
+const argv = require('minimist')(process.argv.slice(2));
+const fs = require('fs')
+const path = require('path')
+const server = require('../server/index.js')
+
+const { t, token } = argv
+
+console.log('Starting piosk-client... \n')
+
+let readToken
+
+const readTokenFromFile = (path) => {
+	if (fs.existsSync(path)) {
+		try {
+			const token = (fs.readFileSync(path)).toString()
+			return token
+		} catch (e) {
+			console.error(e.message)
+			process.exit(1)
+		}
+	} else {
+		console.error('ERR: No token found \n')
+		process.exit(1)
+	}
+}
+
+
+if (!t && !token) {
+	const tokenPath = `${process.cwd()}/piosk.token`
+
+	console.log('Try to read token from ' + tokenPath + "\n")
+
+	readToken = readTokenFromFile(tokenPath)
+} else {
+	const tokenPath = t || token
+
+	if (!fs.existsSync(path.resolve(process.cwd(), tokenPath)) && tokenPath.split('.').length === 3) {
+		readToken = tokenPath
+	} else {
+		readToken = readTokenFromFile(path.resolve(process.cwd(), tokenPath))
+	}
+}
+
+server(readToken)
