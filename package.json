@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "npx nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx nodemon index.js"
   },
   "bin": {
     "piosk-client": "bin/piosk-client"
@@ -17,11 +16,11 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/necccc/piosk-client/issues"
   },
-  "homepage": "https://github.com/necccc/piosk-client#readme",
+  "homepage": "https://piosk.herokuapp.com",
   "dependencies": {
     "ejs": "2.6.1",
     "express": "4.16.3",
