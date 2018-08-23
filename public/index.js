@@ -111,8 +111,8 @@ const startIf = () => {
 	currentPage = currentPages[0].url
 	setFrameActive(currentPages[0].url)
 
-	//setTimeout(cycle, currentPages[0].time * 1000)
-	setTimeout(cycle, 2 * 1000)
+	setTimeout(cycle, currentPages[0].time * 1000)
+//	setTimeout(cycle, 2 * 1000)
 }
 
 const cycle = () => {
@@ -122,8 +122,8 @@ const cycle = () => {
 
 	setFrameActive(next.url)
 	currentPage = next.url
-	//setTimeout(cycle, next.time * 1000)
-	setTimeout(cycle, 2 * 1000)
+	setTimeout(cycle, next.time * 1000)
+	//setTimeout(cycle, 2 * 1000)
 }
 
 const setFrameActive = (url) => {
